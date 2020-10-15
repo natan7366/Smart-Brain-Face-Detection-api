@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(cors());
 
 // my endpoints:
-app.get ('/', (req, res) => { res.send('it is working') } )
+app.get ('/', (req, res) => { res.send(myDB.users) } )
 app.post ('/signin', (req, res) => { signin.handleSignin(req, res, myDB, bcrypt) } )
 app.post('/register', (req, res) => { register.handleRegister(req, res, myDB, bcrypt) } )
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, myDB) } )
